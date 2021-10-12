@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --colorFront: #101c2c;
+    --colorBack: #05c3ff;
+    --colorBackground: #2f3c52;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--colorBackground);
+    font-family: 'Righteous', sans-serif;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 700px;
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s, outline 1s ease-in;
+}
+
+.card_front, .card_back {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    backface-visibility: hidden;
+}
+
+.card_front {
+    background-color: var(--colorFront);
+    transform: rotateY(180deg);
+}
+
+.card_back {
+    background-color: var(--colorBack);
+    font-size: 30px;
+    color: var(--colorFront);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.pair {
+    outline: 4px solid yellow;
+    border-radius: 20px;
+}
+
+.gameOver {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-size: 45px;
+    top: 0;
+}
+
+#restart {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: yellow;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#restart:hover {
+    background-color: #e9e901;
+}
