@@ -1,2 +1,1 @@
-# Jogo-da-Memoria
- Exemplo do jogo da memoria utilizando javascript
+# 🚧 Jogo em Construção 🚧
