@@ -35,7 +35,7 @@ body {
     height: 150px;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform .5s, border .8s ease-in;
+    transition: transform .5s, outline .8s ease-in;
 }
 
 .card_front, .card_back {
@@ -66,7 +66,8 @@ body {
 }
 
 .pair {
-    border: 3px solid yellow;
+    outline: 3px solid yellow;
+    border-radius: 20px;
 }
 
 .gameOver {
