@@ -50,16 +50,15 @@ function createCardFace(face, card, element) {
 function flipCard() {
     if (game.setCard(this.id)) {
         this.classList.add("flip")
-        if (game.checkMatch()) {
-            // firstCardView.classList.add("pair")
-            // secondCardView.classList.add("pair")
-            setTimeout(() => {
-                game.clearCards()
-            }, 500)
-        } else {
-            let firstCardView = document.getElementById(game.firstCard.id)
-            let secondCardView = document.getElementById(game.secondCard.id)
 
+        let firstCardView = document.getElementById(game.firstCard.id)
+        let secondCardView = document.getElementById(game.secondCard.id)
+
+        if (game.checkMatch()) {
+            firstCardView.classList.add("pair")
+            secondCardView.classList.add("pair")
+            game.clearCards()
+        } else {
             setTimeout(() => {
                 firstCardView.classList.remove("flip")
                 secondCardView.classList.remove("flip")
