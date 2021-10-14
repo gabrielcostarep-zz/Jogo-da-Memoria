@@ -66,12 +66,12 @@ let game = {
 
         if (!this.firstCard) {
             this.firstCard = card
-            this.firstCard = true
+            this.firstCard.flipped = true
             
             return true
         } else {
             this.secondCard = card
-            this.secondCard = true
+            this.secondCard.flipped = true
             
             this.lockMode = true
             return true
