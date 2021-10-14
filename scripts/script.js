@@ -66,7 +66,7 @@ function flipCard() {
 
                     setTimeout(() => {
                         gameOverLayer.style.display = "flex"
-                    }, 1000)
+                    }, 1200)
                 }
             } else {
                 setTimeout(() => {
