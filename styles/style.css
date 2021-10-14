@@ -66,10 +66,9 @@ body {
 }
 
 .pair {
-    <-- outline: 3px solid yellow;
-    border-radius: 20px; -->
-    box-shadow: 0px 0px 0px 3px yellow;
-    <-- box-shadow: rgba(255, 255, 0, 0.35) 0px 5px 15px; -->
+    outline: 3px solid yellow;
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 0, 0.35) 0px 5px 15px;
 }
 
 .gameOver {
