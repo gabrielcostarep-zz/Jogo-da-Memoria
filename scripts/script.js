@@ -59,6 +59,11 @@ function flipCard() {
             firstCardView.classList.add("pair")
             secondCardView.classList.add("pair")
             game.clearCards()
+            
+            if (game.checkGameOver()) {
+                let gameOverLayer = document.getElementsByClassName("gameOver")[0]
+                gameOverLayer.style.display = "flex"
+                }
         } else {
             setTimeout(() => {
                 firstCardView.classList.remove("flip")
