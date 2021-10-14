@@ -11,7 +11,7 @@ function startGame() {
 
 function initializeCards(cards) {
     let gameBoard = document.getElementsByClassName("gameBoard")[0]
-    
+
     gameBoard.innerHTML = ""
     game.cards.forEach((card) => {
         let cardElement = document.createElement('div')
@@ -52,37 +52,37 @@ function flipCard() {
     if (game.setCard(this.id)) {
         this.classList.add("flip")
 
-    if (game.secondCard) {
-        let firstCardView = document.getElementById(game.firstCard.id)
-        let secondCardView = document.getElementById(game.secondCard.id)
+        if (game.secondCard) {
+            let firstCardView = document.getElementById(game.firstCard.id)
+            let secondCardView = document.getElementById(game.secondCard.id)
 
-        if (game.checkMatch()) {
-            firstCardView.classList.add("pair")
-            secondCardView.classList.add("pair")
-            game.clearCards()
-            
-            if (game.checkGameOver()) {
-                let gameOverLayer = document.getElementsByClassName("gameOver")[0]
-                
-                setTimeout(() => {
-                    gameOverLayer.style.display = "flex"
-                }, 1000)
+            if (game.checkMatch()) {
+                firstCardView.classList.add("pair")
+                secondCardView.classList.add("pair")
+                game.clearCards()
+
+                if (game.checkGameOver()) {
+                    let gameOverLayer = document.getElementsByClassName("gameOver")[0]
+
+                    setTimeout(() => {
+                        gameOverLayer.style.display = "flex"
+                    }, 1000)
                 }
-        } else {
-            setTimeout(() => {
-                firstCardView.classList.remove("flip")
-                secondCardView.classList.remove("flip")
+            } else {
+                setTimeout(() => {
+                    firstCardView.classList.remove("flip")
+                    secondCardView.classList.remove("flip")
 
-                game.unflipCards()
-            }, 1000)
+                    game.unflipCards()
+                }, 1000)
+            }
         }
-    }
     }
 }
 
 function restart() {
     let gameOverLayer = document.getElementsByClassName("gameOver")[0]
-    
+
     game.clearCards()
     startGame()
     gameOverLayer.style.display = "none"
