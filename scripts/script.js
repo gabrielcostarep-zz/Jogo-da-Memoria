@@ -63,7 +63,10 @@ function flipCard() {
             
             if (game.checkGameOver()) {
                 let gameOverLayer = document.getElementsByClassName("gameOver")[0]
-                gameOverLayer.style.display = "flex"
+                
+                setTimeout(() => {
+                    gameOverLayer.style.display = "flex"
+                }, 500)
                 }
         } else {
             setTimeout(() => {
