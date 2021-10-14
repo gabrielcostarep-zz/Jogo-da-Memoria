@@ -96,6 +96,6 @@ let game = {
         this.firstCard.flipped = false
         this.secondCard.flipped = false
         
-        this.clearCards
+        this.clearCards()
     }
 }
