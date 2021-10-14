@@ -11,7 +11,8 @@ function startGame() {
 
 function initializeCards(cards) {
     let gameBoard = document.getElementsByClassName("gameBoard")[0]
-
+    
+    gameBoard.innerHTML = ""
     game.cards.forEach((card) => {
         let cardElement = document.createElement('div')
         cardElement.id = card.id
@@ -74,4 +75,12 @@ function flipCard() {
         }
     }
     }
+}
+
+function restart() {
+    let gameOverLayer = document.getElementsByClassName("gameOver")[0]
+    
+    game.clearCards()
+    startGame()
+    gameOverLayer.style.display = "none"
 }
